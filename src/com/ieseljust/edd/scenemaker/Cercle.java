@@ -24,7 +24,7 @@ public class Cercle extends Figura {
         this.y = 0;
         this.w = 0;
         this.h = 0;
-        this.color = Color.BLACK;
+        this.color = Color.BLUE;
     }
 
     Cercle(int x, int y) {
@@ -33,7 +33,7 @@ public class Cercle extends Figura {
         this.y = y;
         this.w = 100;
         this.h = 100;
-        this.color = Color.BLACK;
+        this.color = color;
     };
 
     Cercle(int x, int y, Color color) {

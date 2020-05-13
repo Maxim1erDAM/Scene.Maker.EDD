@@ -41,7 +41,7 @@ public class Quadrat extends Figura {
         this.y = y;
         this.w = this.h;
         this.h = this.w;
-        this.color = this.color;
+        this.color = color;
 
     }
 
@@ -76,8 +76,8 @@ public class Quadrat extends Figura {
          * https://docs.oracle.com/javase/10/docs/api/java/awt/Graphics.html
          */
 
-        g.setColor(this.color);             // Establim el color interior
-        g.fillRect(x, y,w,h);    // Dibuixem un rectangle en la posició i mida indicades
+        g.setColor(color);             // Establim el color interior
+        g.fillRect(x,y,w,h);    // Dibuixem un rectangle en la posició i mida indicades
     };
 
 }

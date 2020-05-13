@@ -33,7 +33,7 @@ public class Elipse extends Figura{
         this.y = y;
         this.w = 100;
         this.h = 100;
-        this.color = Color.BLACK;
+        this.color = color;
     };
 
     Elipse(int x, int y, Color color) {
@@ -54,10 +54,7 @@ public class Elipse extends Figura{
         this.color = color;
     }
 
-    Elipse(int x, int y, int w, int h, String color) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+ 
    
 
   

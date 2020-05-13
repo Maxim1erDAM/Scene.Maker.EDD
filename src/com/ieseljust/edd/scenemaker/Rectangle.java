@@ -24,7 +24,7 @@ public class Rectangle extends Figura{
         this.y = 0;
         this.width = 0;
         this.height = 0;
-        this.color = Color.BLACK;
+        this.color = color;
     }
 
     Rectangle(int x, int y) {
@@ -33,7 +33,7 @@ public class Rectangle extends Figura{
         this.y = y;
         this.width = 100;
         this.height = 100;
-        this.color = Color.BLACK;
+        this.color = color;
     };
 
     Rectangle(int x, int y, Color color) {

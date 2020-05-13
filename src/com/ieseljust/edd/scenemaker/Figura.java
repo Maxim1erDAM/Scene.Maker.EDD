@@ -27,7 +27,7 @@ public class Figura implements Renderizable{
         // Constructor. Pr defecte creem un tamany de 800x600;
         this.tamX = 800;
         this.tamY = 600;
-        this.color = Color.GREEN;
+        this.color = getColor();
 
     }
 
@@ -39,7 +39,7 @@ public class Figura implements Renderizable{
         this.w = w;
         this.h = h;
 
-        this.color = Color.GREEN;
+        this.color = this.color;
         // Inicialitzem la llista de figures
         LlistaFigures = new ArrayList<Figura>();
     }
