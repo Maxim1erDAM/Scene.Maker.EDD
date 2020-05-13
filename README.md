@@ -40,13 +40,13 @@ Per exemple:
 - Possibilita d'afegir quadrats, en una posició donada, i del costat i color indicat. La sintaxi serà la següent:
 
 ```
-quadrat x1 y1 size color
+quadrat x1 y1 size samesize color
 ```
 
 Per exemple:
 
 ```
-# Figura: quadrat 100 100 150 verd
+# Figura: quadrat 100 100 150 150 verd
 ```
 
 Dibuixarà un quadrat verd en la posició (100,100), i de costat 150.
@@ -55,13 +55,13 @@ Dibuixarà un quadrat verd en la posició (100,100), i de costat 150.
 - Possibilita d'afegir Cercles en una posició donada, i de radi i colors concrets. La sintaxi serà:
 
 ```
-cercle x y radi color
+cercle x y radi sameradi color
 ```
 
 Per exemple:
 
 ```
-# Figura: cercle 100 150 50 blau
+# Figura: cercle 100 150 50 50 blau
 ```
 
 Dibuixarà un cercle blau centrat en la posició (100,150), i de radi 50.
