@@ -17,37 +17,46 @@ public class Quadrat extends Figura {
 
     private Color color;
 
-    // Constructors
+     // Constructors
     Quadrat() {
         // Constructor per defecte sense paràmetres
         this.x = 0;
         this.y = 0;
         this.w = 0;
         this.h = 0;
-        this.color = Color.GREEN;
+        this.color = color;
     }
 
-    Quadrat(int x, int y,int w, int h) {
+    Quadrat(int x, int y) {
         // Constructor on s'especifica només pa posició
         this.x = x;
         this.y = y;
-        this.w = this.h;
-        this.h = this.w;
+        this.w = 100;
+        this.h = 100;
+        this.color = color;
     };
 
-    Quadrat(int x, int y,int w, int h, Color color) {
+    Quadrat(int x, int y, Color color) {
         // Constructor on s'especifica la posició i el color
         this.x = x;
         this.y = y;
-        this.w = this.h;
-        this.h = this.w;
+        this.w = 100;
+        this.h = 100;
         this.color = color;
-
     }
 
+    Quadrat(int x, int y, int w, int h, Color color) {
+        // Constructor on s'especifica la posició, el color i les dimensions
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+        this.color = color;
+    }
 
     // Mètode Accessors
 
+    @Override
     public Integer getX() {
         return x;
     }
@@ -55,16 +64,13 @@ public class Quadrat extends Figura {
     public Integer getY() {
         return y;
     }
-   
-
- 
 
     public void describeMe() {
         /*
          * Mètode que mostra en mode text una descripció de la figura per la consola.
          * S'utilitzarà per al mètode llista de la CLI.
          */
-        System.out.println("quadrat " + x + " " + y + " " + h + " " + h + " "+ color);
+        System.out.println("quadrat " + x + " " + y + " " + w + " " + h + " "+ color);
     };
 
     public void render(Graphics g) {

@@ -134,7 +134,7 @@ public class Cli {
                                                     } catch (Exception e) {
                                                         // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
                                                         System.out.println(
-                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n cercle x y radi color\u001B[0m");
+                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n cercle x y radi sameradi color\u001B[0m");
                                                     }
                                                     ;
                                                     break;
@@ -179,7 +179,7 @@ public class Cli {
                                                     } catch (Exception e) {
                                                         // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
                                                         System.out.println(
-                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n quadrat x y size color\u001B[0m");
+                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n quadrat x y size samesize color\u001B[0m");
                                                     }
                                                     ;
                                                     break;                                  

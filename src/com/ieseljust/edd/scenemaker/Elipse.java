@@ -17,14 +17,14 @@ public class Elipse extends Figura{
     private Integer w;
     private Integer h;
 
-    // Constructors
+     // Constructors
     Elipse() {
         // Constructor per defecte sense paràmetres
         this.x = 0;
         this.y = 0;
-        this.w = 100;
-        this.h = 100;
-        this.color = Color.BLACK;
+        this.w = 0;
+        this.h = 0;
+        this.color = color;
     }
 
     Elipse(int x, int y) {
@@ -54,14 +54,9 @@ public class Elipse extends Figura{
         this.color = color;
     }
 
- 
-   
-
-  
-
-
     // Mètode Accessors
 
+    @Override
     public Integer getX() {
         return x;
     }
@@ -69,13 +64,7 @@ public class Elipse extends Figura{
     public Integer getY() {
         return y;
     }
-    public Integer getradiX() {
-        return w;
-    }
 
-    public Integer getadiY() {
-        return h;
-    }
     public void describeMe() {
         /*
          * Mètode que mostra en mode text una descripció de la figura per la consola.
