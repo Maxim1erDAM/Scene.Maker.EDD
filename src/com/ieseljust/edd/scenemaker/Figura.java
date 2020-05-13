@@ -1,8 +1,10 @@
 package com.ieseljust.edd.scenemaker;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.util.ArrayList;
 
-class Escena {
+public class Figura implements Renderizable{
     /*
      * Aquesta classe representa una escena, entesa com un conjunt d'objectes que
      * formen una imatge.
@@ -16,33 +18,58 @@ class Escena {
 
     // Les figures de l'escena s'emmagatzemen en una llista
     private ArrayList<Figura> LlistaFigures;
+    private Color color;
+    private int var1;
+    private int var2;
 
-    Escena() {
+
+    Figura() {
         // Constructor. Pr defecte creem un tamany de 800x600;
         this.tamX = 800;
         this.tamY = 600;
-
-        // Inicialitzem la llista de figures
-        LlistaFigures = new ArrayList<Figura>();
+        this.color = Color.GREEN;
 
     }
 
-    Escena(int x, int y) {
-        // Constructor (sobrecarregat), quan se'ns indica
-        // un tamany per al marc.
+
+
+    Figura(int x, int y, int var1, int var2, String color) {
         this.tamX = x;
         this.tamY = y;
+        this.var1 = var1;
+        this.var2 = var2;
 
+        this.color = Color.GREEN;
         // Inicialitzem la llista de figures
-
+        LlistaFigures = new ArrayList<Figura>();
     }
 
+    public int getVar1() {
+        return var1;
+    }
+
+    public void setVar1(int var1) {
+        this.var1 = var1;
+    }
+
+    public int getVar2() {
+        return var2;
+    }
+
+    public void setVar2(int var2) {
+        this.var2 = var2;
+    }
+    public Color getColor() {
+        return this.color;
+    }
+  
+
     // Mètodes accessors
-    int getX() {
+    Integer getX() {
         return this.tamX;
     }
 
-    int getY() {
+    Integer getY() {
         return this.tamY;
     }
 
@@ -53,6 +80,8 @@ class Escena {
     void setY(int y) {
         this.tamY = y;
     }
+    
+
 
     public void add(Figura figura) {
         /*
@@ -69,6 +98,22 @@ class Escena {
         }
     }
 
+    public void renderText() {
+        /* Mostra la llista de figures i les seues propietats */
+
+        // Recorrem la llista de figures i invoquem
+        // el mètode describeMe de cadascuna d'elles.
+        for (Figura f : this.LlistaFigures) {
+            f.describeMe();
+        }
+    }
+    public void describeMe() {
+        /*
+         * Mètode que mostra en mode text una descripció de la figura per la consola.
+         * S'utilitzarà per al mètode llista de la CLI.
+         */
+        System.out.println("Retorna la figura en unes coordenades:" + tamX + "," + tamY+ "," + color);
+    };
     public void renderScene() {
         /*
          * Aquest mètode s'encarrega de dibuixar l'escena. Per a això, crearà un objecte
@@ -84,10 +129,11 @@ class Escena {
 
     };
 
-    void renderText() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public void render(Graphics g) {
+        Renderer dr = new Renderer(this.tamX, this.tamY);
+        dr.Render(LlistaFigures);
     }
-
 
     
 

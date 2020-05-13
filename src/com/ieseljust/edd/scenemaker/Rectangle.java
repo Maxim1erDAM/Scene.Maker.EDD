@@ -4,7 +4,9 @@ import java.awt.Graphics;
 import java.awt.Color;
 
 import com.ieseljust.edd.scenemaker.Renderizable;
-public class Rectangle implements Renderizable{
+import com.ieseljust.edd.scenemaker.Figura;
+
+public class Rectangle extends Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus rectangle
      */
@@ -54,6 +56,7 @@ public class Rectangle implements Renderizable{
 
     // Mètode Accessors
 
+    @Override
     public Integer getX() {
         return x;
     }

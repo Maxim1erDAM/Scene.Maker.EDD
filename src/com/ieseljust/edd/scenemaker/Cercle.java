@@ -4,7 +4,9 @@ import java.awt.Graphics;
 import java.awt.Color;
 
 import com.ieseljust.edd.scenemaker.Renderizable;
-public class Cercle implements Renderizable{
+import com.ieseljust.edd.scenemaker.Figura;
+
+public class Cercle extends Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus rectangle
      */

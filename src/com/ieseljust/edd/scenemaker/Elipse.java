@@ -4,7 +4,9 @@ import java.awt.Graphics;
 import java.awt.Color;
 
 import com.ieseljust.edd.scenemaker.Renderizable;
-public class Elipse implements Renderizable{
+import com.ieseljust.edd.scenemaker.Figura;
+
+public class Elipse extends Figura{
     /*
      * Aquesta classe representa un element gràfic de tipus rectangle
      */
@@ -51,6 +53,7 @@ public class Elipse implements Renderizable{
         this.radiY = radiY;
         this.color = color;
     }
+
 
     // Mètode Accessors
 

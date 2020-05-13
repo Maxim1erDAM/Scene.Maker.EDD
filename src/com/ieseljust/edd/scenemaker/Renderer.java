@@ -18,7 +18,7 @@ public class Renderer extends Canvas {
     private static final long serialVersionUID = 1L;
 
     // Contingut de l'escena a dibuixar
-    ArrayList<Rectangle> Scene;
+    ArrayList<Figura> Scene;
     Integer w, h;
     
     Renderer() {};  // Constructor buit
@@ -29,12 +29,12 @@ public class Renderer extends Canvas {
         h = y;
     };
 
-    Renderer(ArrayList<Rectangle> Scene) {
+    Renderer(ArrayList<Figura> Scene) {
         // Constructor passnt-li l'escena.
         this.Scene = Scene;
     };
 
-    int Render(ArrayList<Rectangle> Scene) {
+    int Render(ArrayList<Figura> Scene) {
         /*
         Crea el JFrame i el Canvas per dibuixar la
         imatge i mostrar-la per pantalla.
@@ -62,8 +62,10 @@ public class Renderer extends Canvas {
         
         */
         if (Scene != null) {
-            Scene.forEach((Rectangle) -> Rectangle.render(g));
+            Scene.forEach((Figura) -> Figura.render(g));
         }
     }
+
+    
 
 }
