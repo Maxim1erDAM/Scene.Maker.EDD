@@ -3,6 +3,7 @@ package com.ieseljust.edd.scenemaker;
 import java.util.ArrayList;
 
 class Escena {
+
     /*
      * Aquesta classe representa una escena, entesa com un conjunt d'objectes que
      * formen una imatge.
@@ -34,7 +35,6 @@ class Escena {
         this.tamY = y;
 
         // Inicialitzem la llista de figures
-
     }
 
     // Mètodes accessors
@@ -69,6 +69,16 @@ class Escena {
         }
     }
 
+    public void renderText() {
+        /* Mostra la llista de figures i les seues propietats */
+
+        // Recorrem la llista de figures i invoquem
+        // el mètode describeMe de cadascuna d'elles.
+        for (Figura f : this.LlistaFigures) {
+            f.describeMe();
+        }
+    }
+
     public void renderScene() {
         /*
          * Aquest mètode s'encarrega de dibuixar l'escena. Per a això, crearà un objecte
@@ -82,15 +92,7 @@ class Escena {
         Renderer dr = new Renderer(this.tamX, this.tamY);
         dr.Render(LlistaFigures);
 
-    };
-
-    void renderText() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-
-    
-
-    
+;
 
 }
