@@ -19,8 +19,8 @@ public class Figura implements Renderizable{
     // Les figures de l'escena s'emmagatzemen en una llista
     private ArrayList<Figura> LlistaFigures;
     private Color color;
-    private int var1;
-    private int var2;
+    private int w;
+    private int h;
 
 
     Figura() {
@@ -33,31 +33,31 @@ public class Figura implements Renderizable{
 
 
 
-    Figura(int x, int y, int var1, int var2, String color) {
+    Figura(int x, int y, int w, int h, String color) {
         this.tamX = x;
         this.tamY = y;
-        this.var1 = var1;
-        this.var2 = var2;
+        this.w = w;
+        this.h = h;
 
         this.color = Color.GREEN;
         // Inicialitzem la llista de figures
         LlistaFigures = new ArrayList<Figura>();
     }
 
-    public int getVar1() {
-        return var1;
+    public int getW() {
+        return w;
     }
 
-    public void setVar1(int var1) {
-        this.var1 = var1;
+    public void setW(int w) {
+        this.w = w;
     }
 
-    public int getVar2() {
-        return var2;
+    public int getH() {
+        return h;
     }
 
-    public void setVar2(int var2) {
-        this.var2 = var2;
+    public void setH(int h) {
+        this.h = h;
     }
     public Color getColor() {
         return this.color;

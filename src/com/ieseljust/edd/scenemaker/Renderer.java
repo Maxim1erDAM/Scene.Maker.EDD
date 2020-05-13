@@ -51,7 +51,7 @@ public class Renderer extends Canvas {
         return 1;
     }
 
-    // @Override
+    @Override
     public void paint(Graphics g) {
         /*
         Amb aquest mètode sobrecrivim el mètode `paint`per defecte de

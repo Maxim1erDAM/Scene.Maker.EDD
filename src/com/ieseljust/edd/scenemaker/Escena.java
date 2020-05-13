@@ -33,6 +33,7 @@ class Escena {
         // un tamany per al marc.
         this.tamX = x;
         this.tamY = y;
+        LlistaFigures = new ArrayList<Figura>();
 
         // Inicialitzem la llista de figures
     }
@@ -54,7 +55,7 @@ class Escena {
         this.tamY = y;
     }
 
-    public void add(Figura figura) {
+    public void add(Elipse figura) {
         /*
          * Aquest mètode afig un objecte de tipus Rectangle a l'escena.
          */
@@ -68,7 +69,76 @@ class Escena {
             System.out.println("\u001B[31m La imatge cau fora de l'escena. \u001B[0m");
         }
     }
+     public void add(Rectangle figura) {
+        /*
+         * Aquest mètode afig un objecte de tipus Rectangle a l'escena.
+         */
 
+        // Comprovem que la figura cau dins la imatge
+        if (figura.getX() < this.tamX && figura.getY() < this.tamY) {
+            this.LlistaFigures.add(figura);
+            System.out.println("\u001B[32m OK \u001B[0m");
+        } else {
+            // En cas contrari, mostrem l'error
+            System.out.println("\u001B[31m La imatge cau fora de l'escena. \u001B[0m");
+        }
+    }
+     public void add(Linia figura) {
+        /*
+         * Aquest mètode afig un objecte de tipus Rectangle a l'escena.
+         */
+
+        // Comprovem que la figura cau dins la imatge
+        if (figura.getX() < this.tamX && figura.getY() < this.tamY) {
+            this.LlistaFigures.add(figura);
+            System.out.println("\u001B[32m OK \u001B[0m");
+        } else {
+            // En cas contrari, mostrem l'error
+            System.out.println("\u001B[31m La imatge cau fora de l'escena. \u001B[0m");
+        }
+    }
+ public void add(Cercle figura) {
+        /*
+         * Aquest mètode afig un objecte de tipus Rectangle a l'escena.
+         */
+
+        // Comprovem que la figura cau dins la imatge
+        if (figura.getX() < this.tamX && figura.getY() < this.tamY) {
+            this.LlistaFigures.add(figura);
+            System.out.println("\u001B[32m OK \u001B[0m");
+        } else {
+            // En cas contrari, mostrem l'error
+            System.out.println("\u001B[31m La imatge cau fora de l'escena. \u001B[0m");
+        }
+    }
+   public void add(Figura figura) {
+        /*
+         * Aquest mètode afig un objecte de tipus Rectangle a l'escena.
+         */
+
+        // Comprovem que la figura cau dins la imatge
+        if (figura.getX() < this.tamX && figura.getY() < this.tamY) {
+            this.LlistaFigures.add(figura);
+            System.out.println("\u001B[32m OK \u001B[0m");
+        } else {
+            // En cas contrari, mostrem l'error
+            System.out.println("\u001B[31m La imatge cau fora de l'escena. \u001B[0m");
+        }
+    }
+ public void add(Quadrat figura) {
+        /*
+         * Aquest mètode afig un objecte de tipus Rectangle a l'escena.
+         */
+
+        // Comprovem que la figura cau dins la imatge
+        if (figura.getX() < this.tamX && figura.getY() < this.tamY) {
+            this.LlistaFigures.add(figura);
+            System.out.println("\u001B[32m OK \u001B[0m");
+        } else {
+            // En cas contrari, mostrem l'error
+            System.out.println("\u001B[31m La imatge cau fora de l'escena. \u001B[0m");
+        }
+    }
     public void renderText() {
         /* Mostra la llista de figures i les seues propietats */
 

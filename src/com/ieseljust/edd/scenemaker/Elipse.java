@@ -14,16 +14,16 @@ public class Elipse extends Figura{
     private Integer x;
     private Integer y;
     private Color color;
-    private Integer radiX;
-    private Integer radiY;
+    private Integer w;
+    private Integer h;
 
     // Constructors
     Elipse() {
         // Constructor per defecte sense paràmetres
         this.x = 0;
         this.y = 0;
-        this.radiX = 100;
-        this.radiY = 100;
+        this.w = 100;
+        this.h = 100;
         this.color = Color.BLACK;
     }
 
@@ -31,8 +31,8 @@ public class Elipse extends Figura{
         // Constructor on s'especifica només pa posició
         this.x = x;
         this.y = y;
-        this.radiX = 100;
-        this.radiY = 100;
+        this.w = 100;
+        this.h = 100;
         this.color = Color.BLACK;
     };
 
@@ -40,19 +40,27 @@ public class Elipse extends Figura{
         // Constructor on s'especifica la posició i el color
         this.x = x;
         this.y = y;
-        this.radiX = 100;
-        this.radiY = 100;
+        this.w = 100;
+        this.h = 100;
         this.color = color;
     }
 
-    Elipse(int x, int y, int radiX, int radiY, Color color) {
+    Elipse(int x, int y, int w, int h, Color color) {
         // Constructor on s'especifica la posició, el color i les dimensions
         this.x = x;
         this.y = y;
-        this.radiX = radiX;
-        this.radiY = radiY;
+        this.w = w;
+        this.h = h;
         this.color = color;
     }
+
+    Elipse(int x, int y, int w, int h, String color) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+
+  
 
 
     // Mètode Accessors
@@ -65,18 +73,18 @@ public class Elipse extends Figura{
         return y;
     }
     public Integer getradiX() {
-        return radiX;
+        return w;
     }
 
     public Integer getadiY() {
-        return radiY;
+        return h;
     }
     public void describeMe() {
         /*
          * Mètode que mostra en mode text una descripció de la figura per la consola.
          * S'utilitzarà per al mètode llista de la CLI.
          */
-        System.out.println("elipse " + x + " " + y + " " + radiX + " " + radiY + " " + color);
+        System.out.println("elipse " + x + " " + y + " " + w + " " + h + " " + color);
     };
 
     public void render(Graphics g) {
@@ -89,7 +97,7 @@ public class Elipse extends Figura{
          */
 
         g.setColor(this.color);             // Establim el color interior
-        g.fillOval(x, y, radiX, radiY);    // Dibuixem una elipse en la posició i mida indicades
+        g.fillOval(x, y, w, h);    // Dibuixem una elipse en la posició i mida indicades
     };
 
 }

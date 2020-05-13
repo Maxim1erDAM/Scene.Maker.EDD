@@ -2,33 +2,26 @@ package com.ieseljust.edd.scenemaker;
 
 // Imports per a entrada de dades
 import java.util.Scanner;
-import java.util.Locale;
+
 // Imports per gestionar el color de les imatges
 import java.awt.Color;
 
 // Imports per a gestió de llistes
 import java.util.ArrayList;
-import java.util.Set;
+import java.lang.Exception;
 
 public class Cli {
-
-
     /*
      * Classe principal de l'aplicació. S'encarrega de la interacció amb l'usuari i
      * de la generació de l'escena amb les imatges.
      */
+
     // Escena serà una classe que mantindrà la llista
     // de figures a representar.
     private static Escena AppEscena;
-    private int x;
-    private int w;
-    private int h;
-    private int y;
-    private String color;
-    private int name;
 
     public void run(String[] args) {
-      /*
+        /*
          * Mètode llançador de la classe. S'encarrega de mantindre la CLI activa,
          * preguntant a l'usuari i executant les ordres que aquest introdueix.
          */
@@ -54,7 +47,7 @@ public class Cli {
         // Iniciem el bucle infinit fins que escriga "quit".
         String figura;
 
-
+                       
         do {
             // Preguntem la següent figura a emmagatzemar
             System.out.print("# Figura: ");
@@ -65,6 +58,7 @@ public class Cli {
             String[] components = ordre.split(" ");
 
             figura = components[0];
+                       
 
             switch (figura) {
                 case "dimensions":
@@ -78,58 +72,122 @@ public class Cli {
                     }
                     break;
                 case "rectangle":
-                case "elipse":
-                case "cercle":
-                case "linia":
-                case "quadrat":
-                    // Creació d'una figura de la classe Figura
+                    // Creació d'una figura de la classe cercle
                     try {
                         // Extraiem les dimensions
-
                         int x = Integer.parseInt((components[1]));
                         int y = Integer.parseInt((components[2]));
                         int w = Integer.parseInt((components[3]));
                         int h = Integer.parseInt((components[4]));
                         String color = components[5];
+
                         // Si tot és correcte creem la figura cercle
-                        Figura nouFig = new Figura(x, y, w, h, color);
+                        Rectangle nouRect = new Rectangle(x, y, w, h, this.getColor(color));
                         // I l'afegim a la llista
-                        AppEscena.add(nouFig);
+                        AppEscena.add(nouRect);
 
                     } catch (Exception e) {
                         // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
-                        if (figura.equals("cercle")) {
-                            System.out.println(
-                                    "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n cercle x y radi color\u001B[0m");
-                            break;
-                           
-                        }
-                        
-                        if (figura.equals("elipse")) {
-                            System.out.println(
-                                    "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n elipse x1 y1 radiX radiY color\u001B[0m");
-                                    break;
-
-                        }
-
-                        if (figura.equals("quadrat")) {
-                            System.out.println(
-                                    "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n quadrat x1 y1 size color\u001B[0m");
-                            break;
-                        }
-                        if (figura.equals("rectangle")) {
-                            System.out.println(
-                                    "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n rectangle x1 y1 x2 y2 color\u001B[0m");
-                                                                break;
-
-                        }
-                        if (figura.equals("linia")) {
-                            System.out.println(
-                                    "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n linia x1 y1 x2 y2 color\u001B[0m");
-                                                                break;
-
-                        }
+                        System.out.println(
+                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\nrectangle x y width height color\u001B[0m");
                     }
+                    ;
+                    break;
+                case "elipse":
+                                    // Creació d'una figura de la classe cercle
+                                    try {
+                                        // Extraiem les dimensions
+                                        int x = Integer.parseInt((components[1]));
+                                        int y = Integer.parseInt((components[2]));
+                                        int w = Integer.parseInt((components[3]));
+                                        int h = Integer.parseInt((components[4]));
+                                        String color = components[5];
+
+                                        // Si tot és correcte creem la figura cercle
+                                        Figura nouEli = new Elipse(x, y, w, h, this.getColor(color));
+                                        // I l'afegim a la llista
+                                        AppEscena.add(nouEli);
+
+                                    } catch (Exception e) {
+                                        // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
+                                        System.out.println(
+                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n elipse x y radiX radiY color\u001B[0m");
+                                    }
+                                    ;
+                                    break;
+                case "cercle":
+                                                    // Creació d'una figura de la classe cercle
+                                                    try {
+                                                        // Extraiem les dimensions
+                                                        int x = Integer.parseInt((components[1]));
+                                                        int y = Integer.parseInt((components[2]));
+                                                        int w = Integer.parseInt((components[3]));
+                                                        int h = Integer.parseInt((components[4]));
+
+                                                        String color = components[5];
+
+                                                        // Si tot és correcte creem la figura cercle
+                                                        Figura nouCer = new Cercle(x, y, w,h, this.getColor(color));
+                                                        // I l'afegim a la llista
+                                                        AppEscena.add(nouCer);
+
+                                                    } catch (Exception e) {
+                                                        // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
+                                                        System.out.println(
+                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n cercle x y radi color\u001B[0m");
+                                                    }
+                                                    ;
+                                                    break;
+                 case "linia":
+                                                    // Creació d'una figura de la classe cercle
+                                                    try {
+                                                        // Extraiem les dimensions
+                                                        int x1 = Integer.parseInt((components[1]));
+                                                        int y1 = Integer.parseInt((components[2]));
+                                                        int x2 = Integer.parseInt((components[3]));
+                                                        int y2 = Integer.parseInt((components[4]));
+
+                                                        String color = components[5];
+
+                                                        // Si tot és correcte creem la figura cercle
+                                                        Figura nouLin = new Linia(x1, y1, x2,y2, this.getColor(color));
+                                                        // I l'afegim a la llista
+                                                        AppEscena.add(nouLin);
+
+                                                    } catch (Exception e) {
+                                                        // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
+                                                        System.out.println(
+                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n linia x1 y1 x2 y2 color\u001B[0m");
+                                                    }
+                                                    ;
+                                                    break;                                    
+                    case "quadrat":
+                                                    // Creació d'una figura de la classe cercle
+                                                    try {
+                                                        // Extraiem les dimensions
+                                                        int x = Integer.parseInt((components[1]));
+                                                        int y = Integer.parseInt((components[2]));
+                                                        int size = Integer.parseInt((components[3]));
+
+                                                        String color = components[4];
+
+                                                        // Si tot és correcte creem la figura cercle
+                                                        Figura nouQuad = new Quadrat(x, y, size, size,this.getColor(color));
+                                                        // I l'afegim a la llista
+                                                        AppEscena.add(nouQuad);
+
+                                                    } catch (Exception e) {
+                                                        // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
+                                                        System.out.println(
+                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n quadrat x y size color\u001B[0m");
+                                                    }
+                                                    ;
+                                                    break;                                  
+                /*
+                 * TO-DO: Aci és on haurem de capturar si es tracta d'altre tipus de figura,
+                 * capturar les propietats de la nova figura, crear-la i guardar-la on
+                 * corresponga.
+                 */
 
                 case "get":
                     // Descarreguem una figura en el format que estem treballant des d'Internet
@@ -150,19 +208,27 @@ public class Cli {
                                     AppEscena.setY(Integer.parseInt(items[2]));
                                     break;
                                 case "rectangle":
-                                    break;
+                                    int x = Integer.parseInt((items[1]));
+                                    int y = Integer.parseInt((items[2]));
+                                    int w = Integer.parseInt((items[3]));
+                                    int h = Integer.parseInt((items[4]));
+                                    String color = items[5];
+
+                                    // Si tot és correcte creem la figura cercle
+                                    Figura nouRect = new Rectangle(x, y, w, h, this.getColor(color));
+                                    AppEscena.add(nouRect);
+
                                 case "elipse":
                                     x = Integer.parseInt((items[1]));
                                     y = Integer.parseInt((items[2]));
                                     w = Integer.parseInt((items[3]));
                                     h = Integer.parseInt((items[4]));
-                                    String color = items[5];
-
-                                    Figura nouFig = new Figura(x, y, w, h, color);
+                                    color = items[5];
+                                    
+                                    Figura nouEli = new Elipse(x, y, w, h, this.getColor(color));
 
                                     // I l'afegim a la llista
-                                    AppEscena.add(nouFig);
-                                    break;
+                                    AppEscena.add(nouEli);
                             }
                         }
                     } catch (Exception e) {
@@ -212,10 +278,6 @@ public class Cli {
         } while (true);
     }
 
-    /*
-         * Mètode auxiliar per tal de "traduir" els colors en mode text a la seua
-         * representació com a constants en awt.Color
-     */
     Color getColor(String color) {
         /*
          * Mètode auxiliar per tal de "traduir" els colors en mode text a la seua
