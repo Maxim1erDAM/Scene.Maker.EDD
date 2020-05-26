@@ -12,8 +12,7 @@ public class Quadrat extends Figura {
 
     private Integer x;
     private Integer y;
-    private Integer w;
-    private Integer h;
+    private Integer lados;
 
     private Color color;
 
@@ -22,8 +21,7 @@ public class Quadrat extends Figura {
         // Constructor per defecte sense paràmetres
         this.x = 0;
         this.y = 0;
-        this.w = 0;
-        this.h = 0;
+        this.lados = 0;
         this.color = color;
     }
 
@@ -31,8 +29,7 @@ public class Quadrat extends Figura {
         // Constructor on s'especifica només pa posició
         this.x = x;
         this.y = y;
-        this.w = 100;
-        this.h = 100;
+        this.lados = 100;
         this.color = color;
     };
 
@@ -40,8 +37,7 @@ public class Quadrat extends Figura {
         // Constructor on s'especifica la posició i el color
         this.x = x;
         this.y = y;
-        this.w = 100;
-        this.h = 100;
+        this.lados = 100;
         this.color = color;
     }
 
@@ -49,8 +45,7 @@ public class Quadrat extends Figura {
         // Constructor on s'especifica la posició, el color i les dimensions
         this.x = x;
         this.y = y;
-        this.w = w;
-        this.h = h;
+        this.lados = w;
         this.color = color;
     }
 
@@ -70,7 +65,7 @@ public class Quadrat extends Figura {
          * Mètode que mostra en mode text una descripció de la figura per la consola.
          * S'utilitzarà per al mètode llista de la CLI.
          */
-        System.out.println("quadrat " + x + " " + y + " " + w + " " + h + " "+ color);
+        System.out.println("quadrat " + x + " " + y + " " + lados + " " + lados + " "+ color);
     };
 
     public void render(Graphics g) {
@@ -83,7 +78,23 @@ public class Quadrat extends Figura {
          */
 
         g.setColor(color);             // Establim el color interior
-        g.fillRect(x,y,w,h);    // Dibuixem un rectangle en la posició i mida indicades
+        g.fillRect(x,y,lados,lados);    // Dibuixem un rectangle en la posició i mida indicades
     };
+
+    public Integer getLados() {
+        return lados;
+    }
+
+    public void setLados(Integer lados) {
+        this.lados = lados;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
 
 }

@@ -14,25 +14,28 @@ public class Elipse extends Figura{
     private Integer x;
     private Integer y;
     private Color color;
-    private Integer w;
-    private Integer h;
+    private Integer radiX;
+    private Integer radiY;
+
 
      // Constructors
     Elipse() {
         // Constructor per defecte sense paràmetres
         this.x = 0;
         this.y = 0;
-        this.w = 0;
-        this.h = 0;
-        this.color = color;
+        this.radiX = 0;
+        this.radiY = 0;
+
+        this.color = color.GREEN;
     }
 
     Elipse(int x, int y) {
         // Constructor on s'especifica només pa posició
         this.x = x;
         this.y = y;
-        this.w = 100;
-        this.h = 100;
+        this.radiX = 100;
+        this.radiY = 100;
+
         this.color = color;
     };
 
@@ -40,17 +43,19 @@ public class Elipse extends Figura{
         // Constructor on s'especifica la posició i el color
         this.x = x;
         this.y = y;
-        this.w = 100;
-        this.h = 100;
+        this.radiX = 100;
+        this.radiY = 100;
+
         this.color = color;
     }
 
-    Elipse(int x, int y, int w, int h, Color color) {
+    Elipse(int x, int y, int radiX,int radiY, Color color) {
         // Constructor on s'especifica la posició, el color i les dimensions
         this.x = x;
-        this.y = y;
-        this.w = w;
-        this.h = h;
+        this.y = y ;
+        this.radiX = 100;
+        this.radiY = 100;
+
         this.color = color;
     }
 
@@ -70,7 +75,7 @@ public class Elipse extends Figura{
          * Mètode que mostra en mode text una descripció de la figura per la consola.
          * S'utilitzarà per al mètode llista de la CLI.
          */
-        System.out.println("elipse " + x + " " + y + " " + w + " " + h + " " + color);
+        System.out.println("elipse " + x + " " + y + " " + radiX +" "+ radiY +color);
     };
 
     public void render(Graphics g) {
@@ -82,8 +87,20 @@ public class Elipse extends Figura{
          * https://docs.oracle.com/javase/10/docs/api/java/awt/Graphics.html
          */
 
-        g.setColor(this.color);             // Establim el color interior
-        g.fillOval(x, y, w, h);    // Dibuixem una elipse en la posició i mida indicades
+        g.setColor(color);             // Establim el color interior
+        g.fillOval(x, y, radiX, radiY);    // Dibuixem una elipse en la posició i mida indicades
     };
+
+    public Color getColor() {
+        return color;
+    }
+
+    public Integer getRadiX() {
+        return radiX;
+    }
+
+    public Integer getRadiY() {
+        return radiY;
+    }
 
 }

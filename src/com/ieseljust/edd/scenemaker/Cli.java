@@ -121,20 +121,19 @@ public class Cli {
                                                         // Extraiem les dimensions
                                                         int x = Integer.parseInt((components[1]));
                                                         int y = Integer.parseInt((components[2]));
-                                                        int w = Integer.parseInt((components[3]));
-                                                        int h = Integer.parseInt((components[4]));
+                                                        int radi = Integer.parseInt((components[3]));
 
-                                                        String color = components[5];
+                                                        String color = components[4];
 
                                                         // Si tot és correcte creem la figura cercle
-                                                        Figura nouCer = new Cercle(x, y, w,h, this.getColor(color));
+                                                        Figura nouCer = new Cercle(x, y,radi, this.getColor(color));
                                                         // I l'afegim a la llista
                                                         AppEscena.add(nouCer);
 
                                                     } catch (Exception e) {
                                                         // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
                                                         System.out.println(
-                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n cercle x y radi sameradi color\u001B[0m");
+                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n cercle x y radi color\u001B[0m");
                                                     }
                                                     ;
                                                     break;
@@ -179,7 +178,7 @@ public class Cli {
                                                     } catch (Exception e) {
                                                         // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
                                                         System.out.println(
-                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n quadrat x y size samesize color\u001B[0m");
+                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n quadrat x y size color\u001B[0m");
                                                     }
                                                     ;
                                                     break;                                  

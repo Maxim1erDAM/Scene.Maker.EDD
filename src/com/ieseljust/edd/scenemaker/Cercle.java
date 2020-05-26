@@ -12,8 +12,7 @@ public class Cercle extends Figura {
 
     private Integer x;
     private Integer y;
-    private Integer w;
-    private Integer h;
+    private Integer radi;
 
     private Color color;
 
@@ -22,8 +21,7 @@ public class Cercle extends Figura {
         // Constructor per defecte sense paràmetres
         this.x = 0;
         this.y = 0;
-        this.w = 0;
-        this.h = 0;
+        this.radi = 0;
         this.color = Color.BLUE;
     }
 
@@ -31,26 +29,27 @@ public class Cercle extends Figura {
         // Constructor on s'especifica només pa posició
         this.x = x;
         this.y = y;
-        this.w = 100;
-        this.h = 100;
+        this.radi = 100;
         this.color = color;
     };
+
+    public Integer getRadi() {
+        return radi;
+    }
 
     Cercle(int x, int y, Color color) {
         // Constructor on s'especifica la posició i el color
         this.x = x;
         this.y = y;
-        this.w = 100;
-        this.h = 100;
         this.color = color;
     }
 
-    Cercle(int x, int y, int w, int h, Color color) {
+    Cercle(int x, int y, int radi,Color color) {
         // Constructor on s'especifica la posició, el color i les dimensions
         this.x = x;
         this.y = y;
-        this.w = w;
-        this.h = h;
+        this.radi = radi;
+
         this.color = color;
     }
 
@@ -69,8 +68,8 @@ public class Cercle extends Figura {
     }
 
 
-    public void setW(Integer w) {
-        this.w = w;
+    public void setRadi(Integer radi) {
+        this.radi = radi;
     }
 
 
@@ -82,12 +81,12 @@ public class Cercle extends Figura {
          * Mètode que mostra en mode text una descripció de la figura per la consola.
          * S'utilitzarà per al mètode llista de la CLI.
          */
-        System.out.println("cercle " + x + " " + y + " " + h + " " + w + " "+ color);
+        System.out.println("cercle " + x + " " + y + " " + radi + " "+ color);
     };
 
 
-    public void setH(Integer h) {
-        this.h = h;
+    public void setH(Integer radi) {
+        this.radi = radi;
     }
 
     public Color getColor() {
@@ -107,8 +106,8 @@ public class Cercle extends Figura {
          * https://docs.oracle.com/javase/10/docs/api/java/awt/Graphics.html
          */
 
-        g.setColor(this.color);             // Establim el color interior
-        g.fillOval(x, y,h,w);    // Dibuixem una elipse en la posició i mida indicades
+        g.setColor(color);             // Establim el color interior
+        g.fillOval(x, y,radi,radi);    // Dibuixem una elipse en la posició i mida indicades
     };
 
 }
