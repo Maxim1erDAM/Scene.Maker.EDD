@@ -40,7 +40,7 @@ Per exemple:
 - Possibilita d'afegir quadrats, en una posició donada, i del costat i color indicat. La sintaxi serà la següent:
 
 ```
-quadrat x1 y1 size samesize color
+quadrat x1 y1 costats color
 ```
 
 Per exemple:
@@ -55,7 +55,7 @@ Dibuixarà un quadrat verd en la posició (100,100), i de costat 150.
 - Possibilita d'afegir Cercles en una posició donada, i de radi i colors concrets. La sintaxi serà:
 
 ```
-cercle x y radi sameradi color
+cercle x y radi color
 ```
 
 Per exemple:
