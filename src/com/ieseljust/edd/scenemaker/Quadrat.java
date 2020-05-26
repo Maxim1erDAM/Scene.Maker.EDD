@@ -41,11 +41,11 @@ public class Quadrat extends Figura {
         this.color = color;
     }
 
-    Quadrat(int x, int y, int w, int h, Color color) {
+    Quadrat(int x, int y, int lados, Color color) {
         // Constructor on s'especifica la posició, el color i les dimensions
         this.x = x;
         this.y = y;
-        this.lados = w;
+        this.lados = lados;
         this.color = color;
     }
 

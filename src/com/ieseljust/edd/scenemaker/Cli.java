@@ -133,7 +133,7 @@ public class Cli {
                                                     } catch (Exception e) {
                                                         // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
                                                         System.out.println(
-                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n cercle x y radi color\u001B[0m");
+                                                                "\u001B[31m Error de sintaxi. La sintaxi correcta és:\n cercle x y radi  color\u001B[0m");
                                                     }
                                                     ;
                                                     break;
@@ -166,12 +166,12 @@ public class Cli {
                                                         // Extraiem les dimensions
                                                         int x = Integer.parseInt((components[1]));
                                                         int y = Integer.parseInt((components[2]));
-                                                        int size = Integer.parseInt((components[3]));
+                                                        int lados = Integer.parseInt((components[3]));
 
                                                         String color = components[4];
 
                                                         // Si tot és correcte creem la figura cercle
-                                                        Figura nouQuad = new Quadrat(x, y, size, size,this.getColor(color));
+                                                        Figura nouQuad = new Quadrat(x, y, lados,this.getColor(color));
                                                         // I l'afegim a la llista
                                                         AppEscena.add(nouQuad);
 
