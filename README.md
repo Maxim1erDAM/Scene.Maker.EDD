@@ -85,12 +85,12 @@ Dibuixarà una el·lipse centrada en la posició (100,150), i de radis 50 i 70.
 ## Ejercici (2na part) (Remotelist, list, render i mostrar adroid.txt de la llista remota).
 
 Captura amb les primeres proves amb render i la finestra que genera.
-![ImatgeFitxers](Imatges/proves.png)
+![ImatgeFitxers](imatges/proves.png)
 
 Captura de render incomplet de adroid.txt (faltaba reparar métodes get del fitxer Cli).
 
-![ImatgeFitxers](Imatges/scenemaker.png)
+![ImatgeFitxers](imatges/scenemaker.png)
 
 Captura de render COMPLET de adroid.txt (faltaba reparar métodes get del fitxer Cli).
 
-![ImatgeFitxers](Imatges/scene-maker.png)
+![ImatgeFitxers](imatges/scene-maker.png)
