@@ -106,8 +106,10 @@ public class Cercle extends Figura {
          * https://docs.oracle.com/javase/10/docs/api/java/awt/Graphics.html
          */
 
-        g.setColor(color);             // Establim el color interior
-        g.fillOval(x, y,radi,radi);    // Dibuixem una elipse en la posició i mida indicades
+        g.setColor(color);   
+        // Establim el color interior
+        g.fillOval(x-radi, y-radi,radi * 2,radi * 2);
+    // Dibuixem una elipse en la posició i mida indicades
     };
 
 }

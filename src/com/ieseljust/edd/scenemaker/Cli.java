@@ -9,7 +9,7 @@ import java.awt.Color;
 // Imports per a gestió de llistes
 import java.util.ArrayList;
 import java.lang.Exception;
-
+import java.io.*;
 public class Cli {
     /*
      * Classe principal de l'aplicació. S'encarrega de la interacció amb l'usuari i
@@ -19,6 +19,7 @@ public class Cli {
     // Escena serà una classe que mantindrà la llista
     // de figures a representar.
     private static Escena AppEscena;
+    private int size;
 
     public void run(String[] args) {
         /*
@@ -85,6 +86,7 @@ public class Cli {
                         Rectangle nouRect = new Rectangle(x, y, w, h, this.getColor(color));
                         // I l'afegim a la llista
                         AppEscena.add(nouRect);
+                        break;
 
                     } catch (Exception e) {
                         // Si s'ha produït algun error als paràmetres, s'indica un error de sintaxi
@@ -216,7 +218,7 @@ public class Cli {
                                     // Si tot és correcte creem la figura cercle
                                     Figura nouRect = new Rectangle(x, y, w, h, this.getColor(color));
                                     AppEscena.add(nouRect);
-
+                                    break;
                                 case "elipse":
                                     x = Integer.parseInt((items[1]));
                                     y = Integer.parseInt((items[2]));
@@ -228,6 +230,45 @@ public class Cli {
 
                                     // I l'afegim a la llista
                                     AppEscena.add(nouEli);
+                                    break;
+                                case "quadrat":
+                                    x = Integer.parseInt((items[1]));
+                                    y = Integer.parseInt((items[2]));
+                                    size = Integer.parseInt((items[3]));
+
+                                    color = items[4];
+                                    
+                                    Figura nouQuad = new Quadrat(x, y, size, this.getColor(color));
+
+                                    // I l'afegim a la llista
+                                    AppEscena.add(nouQuad);    
+                                    break;
+                                
+                                case "cercle":
+                                    x = Integer.parseInt((items[1]));
+                                    y = Integer.parseInt((items[2]));
+                                    w = Integer.parseInt((items[3]));
+
+                                    color = items[4];
+                                    
+                                    Figura nouCer = new Cercle(x, y, w, this.getColor(color));
+
+                                    // I l'afegim a la llista
+                                    AppEscena.add(nouCer);    
+                                    break;
+                                    
+                                case "linia":
+                                    x = Integer.parseInt((items[1]));
+                                    y = Integer.parseInt((items[2]));
+                                    w = Integer.parseInt((items[3]));
+                                    h = Integer.parseInt((items[4]));
+                                    color = items[5];
+                                    
+                                    Figura nouLin = new Linia(x, y, w,h, this.getColor(color));
+
+                                    // I l'afegim a la llista
+                                    AppEscena.add(nouLin);    
+                                    break;
                             }
                         }
                     } catch (Exception e) {
